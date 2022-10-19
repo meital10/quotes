@@ -11,7 +11,7 @@ import { AppContainer } from "./styles/AppContainer.styles";
 export const Quotes: React.FC = () => {
   const [quotes, setQuotes] = useState<string>("");
   const [author, setAuthor] = useState<string>("");
-  const quoteRef = useRef();
+  const quoteRef = useRef<HTMLInputElement>(null);
 
   let colors = [
     "#0000e6",
@@ -46,8 +46,10 @@ export const Quotes: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    quoteRef.current.style.color =
-      colors[Math.floor(Math.random() * colors.length)];
+    if (quoteRef.current != null) {
+      quoteRef.current.style.color =
+        colors[Math.floor(Math.random() * colors.length)];
+    }
   }, [quotes]);
 
   return (
