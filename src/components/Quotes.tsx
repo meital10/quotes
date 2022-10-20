@@ -58,7 +58,7 @@ export const Quotes: React.FC = () => {
         <QuoteText ref={quoteRef}> "{quotes}"</QuoteText>
 
         <QuoteAuthor> ~{author}~ </QuoteAuthor>
-        <Button onClick={quotesApi}>Get Quote</Button>
+        <Button onClick={quotesApi}>New Quote</Button>
       </QuoteContainer>
     </AppContainer>
   );
